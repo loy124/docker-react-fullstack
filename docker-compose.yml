@@ -32,21 +32,21 @@ services:
       - /app/node_modules
       - ./backend:/app
 
-  mysql:
-    build: ./mysql
-    restart: unless-stopped
-    container_name: app_mysql
-    ports:
-      - "3307:3307"
-    volumes:
-      - ./mysql/mysql_data:/var/lib/mysql
-      - ./mysql/sqls/:/docker-entrypoint-initdb.d/
-    environment:
-      MYSQL_USER: root
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: myapp
-      MYSQL_TCP_PORT: 3307
-    #mysql의 root 비밀번호와 db를 설정해준다.
+  # mysql:
+  #   build: ./mysql
+  #   restart: unless-stopped
+  #   container_name: app_mysql
+  #   ports:
+  #     - "3307:3307"
+  #   volumes:
+  #     - ./mysql/mysql_data:/var/lib/mysql
+  #     - ./mysql/sqls/:/docker-entrypoint-initdb.d/
+  #   environment:
+  #     MYSQL_USER: root
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: myapp
+  #     MYSQL_TCP_PORT: 3307
+  #mysql의 root 비밀번호와 db를 설정해준다.
     
 
       
