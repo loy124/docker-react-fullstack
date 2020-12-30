@@ -6,7 +6,7 @@ services:
   - docker
 
 before_install:
-  - docekr build -t loy124/react-test-app -f ./frontend/Dockerfile.dev ./frontend
+  - docker build -t loy124/react-test-app -f ./frontend/Dockerfile.dev ./frontend
 
 scripts:
   - docker run -e CI=true loy124/react-test-app npm run test
