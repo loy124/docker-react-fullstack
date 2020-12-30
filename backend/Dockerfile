@@ -1,0 +1,10 @@
+FROM node:alpine
+
+COPY ./package.json ./
+
+RUN npm install
+
+COPY ./ ./
+
+#nodemon 사용 
+CMD ["npm", "run", "start"]
