@@ -13,7 +13,9 @@ app.use(express.json());
 // )`, (err, results, fields) => {
 //     console.log('results', results);
 // })
-
+app.get("/api", (req, res, next) =>{
+  return res.json({hello:"hello"});
+})
 app.get("/api/values", (req, res, next) => {
   db.pool.query("SELECT *FROM lists;", (err, results, fields) => {
     if (err) return res.status(500).send(err);
