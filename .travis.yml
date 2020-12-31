@@ -37,7 +37,7 @@ deploy:
   bucket_path: "docker-fullstack-app"
   #특정 branch에만 해당 aws서버에 올릴 수 있게 설정해두었다.
   on:
-    branch: master
+    branch: main
   # iam 계정으로 부터 생성해서 travis ci에 저장해둔 key
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_ACCESS_KEY
