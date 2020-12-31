@@ -19,7 +19,7 @@ after_success:
   #도커 허브 로그인
   #아이디는 travis CI 홈페이지에 미리 넣어준다.
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
-  #빌드된 이미지들을 도커 허브에 push
+  #빌드된 이미지들을 도커 허브에  push 
   - docker push loy124/docker-frontend
   - docker push loy124/docker-backend
   - docker push loy124/docker-nginx
