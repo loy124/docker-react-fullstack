@@ -23,3 +23,22 @@ after_success:
   - docker push loy124/docker-frontend
   - docker push loy124/docker-backend
   - docker push loy124/docker-nginx
+
+deploy:
+  #외부 서비스 표시(s3, elesticbeanstalk, firebase 등등)
+  provider: elasticbeanstalk
+  #현재 사용하고 있는 AWS의 서비스가 위치하고있는 물리 장소
+  region: "ap-northeast-2"
+  #생성된 어플리케이션의 이름
+  app: "docker-fullstack-app"
+  env: DockerFullstackApp-env
+  #elasticbeanstalk을 위한 s3 버켓이름
+  bucket_name: elasticbeanstalk-ap-northeast-2-770628485357
+  bucket_path: docker-fullstack-app
+   #특정 branch에만 해당 aws서버에 올릴 수 있게 설정 
+   on:
+    branch: main
+  # iam 계정으로 부터 생성해서 travis ci에 저장해둔 key
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+
