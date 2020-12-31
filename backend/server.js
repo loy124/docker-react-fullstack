@@ -6,13 +6,13 @@ const app = express();
 app.use(express.json());
 
 // 테이블 생성하기
-// db.pool.query(`CREATE TABLE lists (
-//     id INTEGER AUTO_INCREMENT,
-//     value TEXT,
-//     PRIMARY KEY (id)
-// )`, (err, results, fields) => {
-//     console.log('results', results);
-// })
+db.pool.query(`CREATE TABLE lists (
+    id INTEGER AUTO_INCREMENT,
+    value TEXT,
+    PRIMARY KEY (id)
+)`, (err, results, fields) => {
+    console.log('results', results);
+})
 app.get("/api", (req, res, next) =>{
   return res.json({hello:"hello"});
 })
