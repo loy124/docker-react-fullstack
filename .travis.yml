@@ -34,11 +34,11 @@ deploy:
   env: DockerFullstackApp-env
   #elasticbeanstalk을 위한 s3 버켓이름
   bucket_name: elasticbeanstalk-ap-northeast-2-770628485357
+  #어플리케이션 이름과 같게 만든다.
   bucket_path: docker-fullstack-app
-   #특정 branch에만 해당 aws서버에 올릴 수 있게 설정 
+   #특정 branch에만 해당 aws서버에 올릴 수 있게 설정해두었다.
    on:
     branch: main
-    
   # iam 계정으로 부터 생성해서 travis ci에 저장해둔 key
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_ACCESS_KEY
